@@ -20,3 +20,7 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'index/register.html', {'form': form},)
+
+
+def login(request):
+     form = MyForm()
