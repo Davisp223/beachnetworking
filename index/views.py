@@ -4,13 +4,18 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django import forms
 from django.contrib.auth.models import User
-from django.urls import reverse_lazy
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
 from .models import UserProfile
-from .forms import UserRegisterForm, EstimateForm
+from django.urls import reverse_lazy
+from .models import UserProfile, Feedback
+from .forms import  EstimateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from .models import Feedback, Estimate, UserProfile
-from django.contrib.auth.views import PasswordResetView
+from .forms import CustomUserCreationForm
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
 from django.views.generic import (
      CreateView,
 )
@@ -21,6 +26,8 @@ def index(request):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             form.save()
+            name = form.cleaned_data.get('name')
+            messages.success(request, f'Thanks for contacting us {name} We will get with you shortly')
             return redirect('index')
     else:
         form = FeedbackForm()
@@ -57,22 +64,53 @@ def estimate(request):
 
 
 
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
+from .forms import CustomUserCreationForm
+from .models import UserProfile
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
 
 def register(request):
-    if request.method == 'POST': 
-            form = UserRegisterForm(request.POST)
-            if form.is_valid():
-                form.save()
-                username = form.cleaned_data.get('username')
-                messages.success(request, f'Your Account Has Been Created {username} You Are Now Able To Login!')
-                return redirect ('login')
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Save the company name to the user's profile
+            user.userprofile.company_name = form.cleaned_data.get('company_name')
+            user.userprofile.save()
+            messages.success(request, 'Your account has been created!')
+            return redirect('login')
     else:
-        form = UserRegisterForm()
-    return render(request, 'index/register.html', {'form': form},)
+        form = CustomUserCreationForm()
+
+    return render(request, 'index/register.html', {'form': form})
+
 
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'index/password_reset_form.html'  # your custom template
+    email_template_name = 'index/password_reset_email.html'  # your custom email template
+    subject_template_name = 'index/password_reset_subject.txt'  # your custom subject template
+    success_url = reverse_lazy('password_reset_done')  # your custom success url
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'index/password_reset_done.html'  # your custom template
+    success_url = reverse_lazy('password_reset_done')  # your custom success url
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'index/password_reset_complete.html'  # your custom template
+    success_url = reverse_lazy('password_reset_done')  # your custom success url
+
+class CustomPasswordResetConfirm(PasswordResetConfirmView):
+    template_name = 'index/password_reset_confirm.html'  # your custom template
     email_template_name = 'index/password_reset_email.html'  # your custom email template
     subject_template_name = 'index/password_reset_subject.txt'  # your custom subject template
     success_url = reverse_lazy('password_reset_done')  # your custom success url

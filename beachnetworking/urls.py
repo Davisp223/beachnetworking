@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from index import views as index_views
-from index.views import CustomPasswordResetView
+
+from index.views import CustomPasswordResetView, CustomPasswordResetDoneView, CustomPasswordResetConfirm, CustomPasswordResetCompleteView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -30,10 +31,9 @@ urlpatterns = [
     path('estimate/', index_views.estimate, name='estimate'),
 
     path('password-reset/', CustomPasswordResetView.as_view(), name='password_reset'),
-    
-    #path('reset_password/', auth_views.PasswordResetView.as_view(), name="reset_password"),
-    #path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
-   # path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
-    #path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
+    path('password-reset/done/', CustomPasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', CustomPasswordResetConfirm.as_view(), name='password_reset_confirm'),
+    path('password-reset/complete/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
+
 
 ]

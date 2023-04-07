@@ -1,21 +1,20 @@
 from django import forms
+from .models import UserProfile
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from .models import Feedback, Estimate
 
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
+class CustomUserCreationForm(UserCreationForm):
+    company_name = forms.CharField(max_length=30)
 
-class UserRegisterForm(UserCreationForm):
-        email = forms.EmailField()
-        first_name = forms.CharField(max_length=30)
-        last_name = forms.CharField(max_length=30)
-        company_name = forms.CharField(max_length=30, )
-
-        
-        class Meta:
-            model = User
-            fields = ['username', 'email', 'first_name', 'last_name','company_name', 'password1', 'password2']
+    class Meta:
+        model = User
+        fields = UserCreationForm.Meta.fields + ('email','first_name','last_name','company_name',)
 
 
 class FeedbackForm(forms.ModelForm):
