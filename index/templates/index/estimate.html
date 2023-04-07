@@ -1,0 +1,26 @@
+{% extends "index/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+
+<div class="container mt-3">
+    <form method="POST">
+        <center><a href="{% url 'index' %}#home">
+            <img class="mt-5 mb-4" src="{% static 'beachnetworkingmain.png' %}" type="button" href="{% url 'index' %}" alt="logo" width="80" height="80"></a></center> 
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Submit An Estimate here</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-info" type="submit">Submit</button>
+        </div>
+    </form>
+    
+</div>
+
+
+
+{% endblock content %}

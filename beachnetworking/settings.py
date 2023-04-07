@@ -36,6 +36,8 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_bootstrap5',
+    'profiles',
     'django.contrib.admin',
     'index.apps.IndexConfig',
     'django.contrib.auth',
@@ -135,7 +137,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 

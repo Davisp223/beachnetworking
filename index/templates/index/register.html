@@ -1,15 +1,21 @@
-{% extends "index/base.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
     <div class="container mt-3">
         <form method="POST">
+            <center><a href="{% url 'index' %}#home">
+                <img class="mt-5 mb-4" src="{% static 'beachnetworkingmain.png' %}" type="button" href="{% url 'index' %}" alt="logo" width="80" height="80"></a></center> 
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Register Here</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button class="btn btn-info" type="submit">Sign Up</button>
             </div>
         </form>
         <div class="border-top pt-3">
@@ -18,4 +24,9 @@
             </small>
         </div>
     </div>
-{% endblock content %}
+
+   <center> <p class="mt-5 mb-5 text-muted">&copy; 2023</p></center>
+
+
+
+    

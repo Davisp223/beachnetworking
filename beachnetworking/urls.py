@@ -21,9 +21,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('index.urls'), name='index'),
     path('login/', auth_views.LoginView.as_view(template_name='index/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='index/logout.html'), name='logout'),
     path('register/', index_views.register, name='register'),
+    path('estimate/', index_views.estimate, name='estimate'),
 ]

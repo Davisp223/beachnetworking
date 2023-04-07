@@ -1,5 +1,7 @@
 {% extends "index/base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
+{% load django_bootstrap5 %}
 {% block content %}
 <!DOCTYPE html>
 
@@ -10,8 +12,11 @@
 <section id="home"></section>
 
 <body>
+  
+
+
   <section id="carousel">
-  <div id="myCarousel" class="carousel slide" data-ride="false">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -87,7 +92,7 @@
 <hr class="featurette-divider">
 <div class="row featurette">
   <div class="col-md-7">
-    <h2 class="featurette-heading">And lastly, we are local. &nbsp;<span class="text-muted">Checkmate.</span></h2>
+    <h2 class="featurette-heading"><strong>And lastly</strong>, we are local. &nbsp;<span class="text-muted">Checkmate.</span></h2>
     <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
   </div>
   <div class="col-md-5">
@@ -106,33 +111,64 @@
   <div class="col-lg-4">
     <img class="rounded-square" src="{% static 'internet.png' %}" alt="Generic placeholder image" width="140" height="140">
     <h2>Internet</h2>
-    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-    <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
+    <p></p>
+    <p><a class="btn btn-info" href="{% url 'estimate' %}" role="button">Get An Estimate &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
     <img class="rounded-square" src="{% static 'server.png' %}" alt="Generic placeholder image" width="140" height="140">
     <h2>Server</h2>
-    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-    <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
+    <p></p>
+    <p><a class="btn btn-info" href="{% url 'estimate' %}" role="button">Get An Estimate &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
     <img class="rounded-square" src="{% static 'smarthome.png' %}" alt="Generic placeholder image" width="140" height="140">
     <h2>Smart Home</h2>
-    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
+    <p></p>
+    <p><a class="btn btn-info" href="{% url 'estimate' %}" role="button">Get An Estimate &raquo;</a></p>
   </div><!-- /.col-lg-4 -->
 </div><!-- /.row -->
 <hr class="featurette-divider">
 </section>
 
 
-</div>
+<section id="contactus">
+
+<!--Section: Contact v.2-->
+<section class="mb-4">
+
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>
+      
+      <div class="content-section">
+        <form method="POST">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"></legend>
+                {% csrf_token %}
+                {% bootstrap_form form %}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Contact Us</button>
+            </div>
+        </form>
+    </div>
+
+    </section>
+    <hr class="featurette-divider">
+<!--Section: Contact v.2-->
+
+</section>
+
+
+
+</div> <!--Div to center everything-->
+
 
 </body>
 </html>
 
-<script>
-</script>
+
 
 {% endblock content %}
 
