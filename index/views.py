@@ -4,11 +4,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django import forms
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from .models import UserProfile
 from .forms import UserRegisterForm, EstimateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from .models import Feedback, Estimate, UserProfile
+from django.contrib.auth.views import PasswordResetView
 from django.views.generic import (
      CreateView,
 )
@@ -67,3 +69,10 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'index/register.html', {'form': form},)
+
+
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'index/password_reset_form.html'  # your custom template
+    email_template_name = 'index/password_reset_email.html'  # your custom email template
+    subject_template_name = 'index/password_reset_subject.txt'  # your custom subject template
+    success_url = reverse_lazy('password_reset_done')  # your custom success url
