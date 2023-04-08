@@ -94,11 +94,11 @@ if DB_URL:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql', 
-            'NAME': 'd723ibo03qc6e0',
-            'USER': 'jieuhzglubfjnd',
-            'PASSWORD': 'c258b85dad75b8ff85fa7e38269571b6edd87e972d763b8eb81b42ee0a83b177',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
             'HOST': 'ec2-34-236-103-63.compute-1.amazonaws.com',
-            'PORT': '5432',
+            'PORT': DB_PORT,
         }
     }
 else:
