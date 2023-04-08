@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-inn&x4gm347kh19&c3vc6!8=61x^!9g8i(#z!+#h=pkgx+#%ig
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'www.beachnetworking.com'
+    'https://beachnetworking.herokuapp.com/'
     'localhost'
 ]
 
