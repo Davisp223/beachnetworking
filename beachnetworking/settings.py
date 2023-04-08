@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'www.beachnetworking.com'
-    'https://beachnetworking.herokuapp.com/'
+    'beachnetworking.herokuapp.com'
     'localhost'
 ]
 
@@ -88,7 +88,7 @@ DB_PASSWORD = os.getenv("DB_Pass")
 DB_HOST = os.getenv("DB_Host")
 DB_NAME = os.getenv("DB_Name")
 DB_PORT = os.getenv("DB_Port")
-DB_URL = os.getenv("HEROKU_POSTGRESQL_GREEN_URL")
+DB_URL = os.getenv("DATABASE_URL")
 if DB_URL:
     DEBUG = True
     DATABASES = {
@@ -97,7 +97,7 @@ if DB_URL:
             'NAME': DB_NAME,
             'USER': DB_USER,
             'PASSWORD': DB_PASSWORD,
-            'HOST': 'ec2-3-226-134-153.compute-1.amazonaws.com',
+            'HOST': 'ec2-34-236-103-63.compute-1.amazonaws.com',
             'PORT': DB_PORT,
         }
     }
