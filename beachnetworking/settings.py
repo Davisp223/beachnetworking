@@ -27,9 +27,9 @@ SECRET_KEY = 'django-insecure-inn&x4gm347kh19&c3vc6!8=61x^!9g8i(#z!+#h=pkgx+#%ig
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.beachnetworking.com'
-    'beachnetworking.herokuapp.com'
-    'localhost'
+    'www.beachnetworking.com',
+    'beachnetworking.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -94,11 +94,11 @@ if DB_URL:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql', 
-            'NAME': DB_NAME,
-            'USER': DB_USER,
-            'PASSWORD': DB_PASSWORD,
+            'NAME': 'd723ibo03qc6e0',
+            'USER': 'jieuhzglubfjnd',
+            'PASSWORD': 'c258b85dad75b8ff85fa7e38269571b6edd87e972d763b8eb81b42ee0a83b177',
             'HOST': 'ec2-34-236-103-63.compute-1.amazonaws.com',
-            'PORT': DB_PORT,
+            'PORT': '5432',
         }
     }
 else:
