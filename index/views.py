@@ -34,7 +34,8 @@ def index(request):
     return render(request, 'index/index.html', {'form': form})
 
 
-
+def custom_404(request, exception):
+    return render(request, 'index/404.html', status=404)
 
 
 @login_required

@@ -37,3 +37,4 @@ urlpatterns = [
 
 
 ]
+handler404 = 'index/views.custom_404'
