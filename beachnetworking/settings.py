@@ -30,7 +30,7 @@ SECKEY = os.getenv("SEC_KEY")
 SECRET_KEY = SECKEY
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'
 
 
 ALLOWED_HOSTS = [
