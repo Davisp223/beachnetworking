@@ -98,7 +98,6 @@ DB_NAME = os.getenv("DB_Name")
 DB_PORT = os.getenv("DB_Port")
 DB_URL = os.getenv("DATABASE_URL")
 if DB_URL:
-    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql', 
@@ -110,7 +109,6 @@ if DB_URL:
         }
     }
 else:
-    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', 
