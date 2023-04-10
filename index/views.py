@@ -37,6 +37,12 @@ def index(request):
 def custom_404(request, exception):
     return render(request, 'index/404.html', status=404)
 
+def tos(request):
+    return render(request, 'index/tos.html')
+
+def privacy(request):
+    return render(request, 'index/privacy.html')
+
 
 @login_required
 def estimate(request):
