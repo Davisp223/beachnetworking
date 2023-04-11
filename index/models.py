@@ -42,7 +42,7 @@ class Estimate(models.Model):
     Budget =  models.CharField(blank=True,max_length=100)
     Aditional_comments =  models.TextField(blank=True,)
     Deadline =  models.CharField(blank=True,max_length=100)
-    How_Did_You_Hear_about_us =  models.CharField(blank=True,max_length=100)
+    How_Did_You_Hear_About_Us =  models.CharField(blank=True,max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
