@@ -34,7 +34,7 @@ class Estimate(models.Model):
     email = models.EmailField()
     company_name = models.CharField(max_length=30, blank=True)
     Phone_number =  models.CharField(blank=True, max_length=40)
-    prefered_contact_method = models.CharField(blank=False,null=False, default='Email',choices=Contact)
+    prefered_contact_method = models.CharField(blank=False,max_length=100,null=False, default='Email',choices=Contact)
     Address =  models.CharField(blank=True,max_length=100)
     Service =  models.CharField(blank=False,max_length=40,null=False, default='Network Instalation',choices=Services)
     Other_service =  models.CharField(blank=True,max_length=100)
