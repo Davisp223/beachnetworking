@@ -24,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "django-insecure-inn&x4gm347kh19&c3vc6!8=61x^!9g8i(#z!+#h=pkgx+#%ig"
 
-SECKEY = os.getenv("SEC_KEY")
-
-SECRET_KEY = SECKEY
+#SECKEY = os.getenv("SEC_KEY")
+#SECRET_KEY = SECKEY
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [
@@ -180,4 +180,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'no-reply@beachnetworking.com'
-EMAIL_HOST_PASSWORD = EMAILPWORDS
+#EMAIL_HOST_PASSWORD = EMAILPWORDS
+EMAIL_HOST_PASSWORD = 'HF6-n~BxjDC28Jx'

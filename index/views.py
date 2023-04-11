@@ -16,6 +16,7 @@ from django.contrib.auth.models import Group
 from .models import Feedback, Estimate, UserProfile
 from .forms import CustomUserCreationForm
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordResetCompleteView
+from django.core.mail import send_mail
 from django.views.generic import (
      CreateView,
 )
@@ -27,7 +28,7 @@ def index(request):
         if form.is_valid():
             form.save()
             name = form.cleaned_data.get('name')
-            messages.success(request, f'Thanks for contacting us {name} We will get with you shortly')
+            messages.success(request, f'Thanks for contacting us {name} We will get with you shortly!')
             return redirect('index')
     else:
         form = FeedbackForm()
@@ -64,6 +65,21 @@ def estimate(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            name = request.POST.get('name')
+            company_name = request.POST.get('company_name')
+
+            messages.success(request, f'Thanks for submitting an estimate. We have sent you an email confirming your estimate.')
+            subject = 'Estimate Confirmation'
+            message = f'Thank you for submiting and estimate, {name}!\n\nWe have received your estimate for {company_name}\n\nOne of our associates will be in contact with you shortly to discuss your estimate.  Thank You again.'
+            from_email = 'no-reply@beachnetworking.com'
+            recipient_list = [request.POST.get('email')]
+            send_mail(subject, message, from_email, recipient_list)
+
+            subject2 = 'Estimate Submission'
+            message2 = f'There has been an estimate submitted by {name} for {company_name} please check the website for more details.'
+            from_email2 = 'no-reply@beachnetworking.com'
+            recipient_list2 = ('davis@beachnetworking.com','colin@beachnetworking.com')
+            send_mail(subject2, message2, from_email2, recipient_list2)
             return redirect('index')
 
     return render(request, 'index/estimate.html', {'form': form})
