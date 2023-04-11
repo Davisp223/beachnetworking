@@ -27,4 +27,4 @@ class EstimateForm(forms.ModelForm):
 
     class Meta:
         model = Estimate
-        fields = ('name', 'email','company_name','Phone_number','Address','Service','Other_service','Deadline','Budget','Aditional_comments','Deadline','How_Did_You_Hear')
+        fields = ('name', 'email','company_name','Phone_number','prefered_contact_method','Address','Service','Other_service','Deadline','Budget','Aditional_comments','Deadline','How_Did_You_Hear_about_us')

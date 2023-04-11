@@ -24,19 +24,25 @@ class Estimate(models.Model):
      ('Other', 'Other'),
     )
 
+    Contact = (
+     ('Email', 'Email'),
+     ('Phone', 'Phone'),
+    )
+
 
     name = models.CharField(max_length=100)
     email = models.EmailField()
     company_name = models.CharField(max_length=30, blank=True)
     Phone_number =  models.CharField(blank=True, max_length=40)
+    prefered_contact_method = models.CharField(blank=False,null=False, default='Email',choices=Contact)
     Address =  models.CharField(blank=True,max_length=100)
     Service =  models.CharField(blank=False,max_length=40,null=False, default='Network Instalation',choices=Services)
-    Other_service =  models.CharField(blank=True,max_length=30)
-    Deadline =  models.CharField(blank=True,max_length=30)
-    Budget =  models.CharField(blank=True,max_length=30)
+    Other_service =  models.CharField(blank=True,max_length=100)
+    Deadline =  models.CharField(blank=True,max_length=100)
+    Budget =  models.CharField(blank=True,max_length=100)
     Aditional_comments =  models.TextField(blank=True,)
-    Deadline =  models.CharField(blank=True,max_length=30)
-    How_Did_You_Hear =  models.CharField(blank=True,max_length=30)
+    Deadline =  models.CharField(blank=True,max_length=100)
+    How_Did_You_Hear_about_us =  models.CharField(blank=True,max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
