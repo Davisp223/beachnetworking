@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     'beachnetworking.com',
     'www.beachnetworking.com',
     'beachnetworking.herokuapp.com',
+    'www.beachnetworking.herokuapp.com',
     'localhost',
 ]
 
