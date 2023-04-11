@@ -33,6 +33,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = [
+    'beachnetworking.com',
     'www.beachnetworking.com',
     'beachnetworking.herokuapp.com',
     'localhost',
