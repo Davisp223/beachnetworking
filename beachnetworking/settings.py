@@ -25,11 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
+
+
 SECKEY = os.getenv("SEC_KEY")
 SECRET_KEY = SECKEY
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = [
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_bootstrap5',
     'profiles',
+	'django.contrib.sitemaps',
     'django.contrib.admin',
     'index.apps.IndexConfig',
     'django.contrib.auth',
