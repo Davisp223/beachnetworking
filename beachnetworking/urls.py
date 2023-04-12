@@ -21,7 +21,13 @@ from index import views as index_views
 from index.views import CustomPasswordResetView, CustomPasswordResetDoneView, CustomPasswordResetConfirm, CustomPasswordResetCompleteView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from index.sitemaps import MySitemap
+from django.views.generic import TemplateView
 
+sitemaps = {
+    'my_sitemap': MySitemap,
+}
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', include('index.urls'), name='index'),
@@ -31,6 +37,9 @@ urlpatterns = [
     path('estimate/', index_views.estimate, name='estimate'),
     path('tos/', index_views.tos, name='tos'),
     path('privacy/', index_views.privacy, name='privacy'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 
     path('password-reset/', CustomPasswordResetView.as_view(), name='password_reset'),
     path('password-reset/done/', CustomPasswordResetDoneView.as_view(), name='password_reset_done'),

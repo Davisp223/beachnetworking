@@ -29,7 +29,7 @@ SECKEY = os.getenv("SEC_KEY")
 SECRET_KEY = SECKEY
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /logout/
+Sitemap: https://www.beachnetworking.com/sitemap.xml
