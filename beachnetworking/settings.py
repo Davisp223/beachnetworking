@@ -42,6 +42,8 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+PREPEND_WWW = True
+BASE_URL = "https://www.beachnetworking.com"
 
 # Application definition
 
