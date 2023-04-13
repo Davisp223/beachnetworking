@@ -44,6 +44,7 @@ ALLOWED_HOSTS = [
 
 PREPEND_WWW = True
 BASE_URL = "https://www.beachnetworking.com"
+SECURE_SSL_REDIRECT=True
 
 # Application definition
 
