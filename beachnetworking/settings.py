@@ -25,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-<<<<<<< HEAD
 SECKEY = os.getenv("SEC_KEY")
 SECRET_KEY = SECKEY
 #SECURITY WARNING: don't run with debug turned on in production!
@@ -188,4 +187,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'no-reply@beachnetworking.com'
-#EMAIL_HOST_PASSWORD = EMAILPWORDS
+EMAIL_HOST_PASSWORD = EMAILPWORDS
