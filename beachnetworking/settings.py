@@ -25,15 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-#SECKEY = os.getenv("SEC_KEY")
-#SECRET_KEY = SECKEY
+<<<<<<< HEAD
+SECKEY = os.getenv("SEC_KEY")
+SECRET_KEY = SECKEY
 #SECURITY WARNING: don't run with debug turned on in production!
 
-EMAIL_HOST_PASSWORD = 'HF6-n~BxjDC28Jx'
-SECRET_KEY = "django-insecure-inn&x4gm347kh19&c3vc6!8=61x^!9g8i(#z!+#h=pkgx+#%i"
 
-
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = [
@@ -44,6 +42,9 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+PREPEND_WWW = True
+BASE_URL = "https://www.beachnetworking.com"
+SECURE_SSL_REDIRECT=True
 
 # Application definition
 
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_bootstrap5',
     'profiles',
+	'django.contrib.sitemaps',
     'django.contrib.admin',
     'index.apps.IndexConfig',
     'django.contrib.auth',
