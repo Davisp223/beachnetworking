@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beach Networking LLC | IT &amp; Network Consulting in Virginia Beach</title>
+<meta name="description" content="Beach Networking LLC provides IT and network consulting in Virginia Beach and Hampton Roads: network overhauls, assessments, security hardening, and Wi-Fi design.">
+<link rel="icon" href="logos/bn-icon-blue.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="logos/bn-icon-blue.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beach Networking LLC">
+<meta property="og:description" content="IT and network consulting: network overhauls, assessments, security hardening, and Wi-Fi design.">
+<meta property="og:image" content="logos/beach-networking-logo-blue.png">
+<meta name="theme-color" content="#0F2C4C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{
+  --navy:#0F2C4C; --navy-deep:#0A2038; --ink:#24405E; --muted:#3A536E;
+  --pale:#EEF2F6; --line:#9FB2C6; --white:#FFFFFF; --on-navy:#D6E0EB;
+  --display:'Barlow Semi Condensed','Arial Narrow',sans-serif;
+  --body:'Barlow','Helvetica Neue',Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--body);color:var(--navy);background:var(--white);font-size:18px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;margin:0}
+h2{font-size:clamp(36px,4.5vw,48px)}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.1em;font-size:15px;text-transform:uppercase}
+section{padding:96px 0}
+.lede{font-size:19px;color:var(--muted);max-width:640px;margin:14px 0 0}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px 14px;z-index:20}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:1px solid #23476E}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.brand img{width:40px;height:40px}
+.brand span{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.06em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+nav a{display:block;color:#fff;text-decoration:none;font-weight:500;font-size:16px;padding:10px 12px}
+nav a:hover{text-decoration:underline;text-underline-offset:5px}
+
+/* buttons */
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;padding:13px 26px;border:3px solid currentColor;text-decoration:none}
+.btn-solid{background:#fff;color:var(--navy);border-color:#fff}
+.btn-solid:hover{background:var(--pale)}
+.btn-line{color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.08)}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:88px 0 104px}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px}
+.hero-copy{flex:1 1 520px;min-width:0}
+.hero h1{font-size:clamp(42px,6vw,72px);margin:14px 0 24px}
+.hero p{font-size:20px;color:var(--on-navy);max-width:580px;margin:0 0 32px}
+.hero .eyebrow{color:var(--on-navy)}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-mark{flex:0 1 320px;margin:0 auto}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:48px}
+.card{border:5px solid var(--navy);padding:32px;display:flex;flex-direction:column;gap:12px}
+.card h3{font-size:28px}
+.card p{margin:0;color:var(--muted)}
+.card.featured{background:var(--navy);color:#fff}
+.card.featured p{color:var(--on-navy)}
+.card ul{margin:4px 0 0;padding-left:20px;color:var(--on-navy)}
+.icon{width:40px;height:40px;stroke:currentColor;fill:none;stroke-width:2.25;stroke-linecap:square}
+
+/* process */
+.process{background:var(--pale)}
+.steps{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;counter-reset:s}
+.steps li{counter-increment:s;border-top:6px solid var(--navy);padding-top:18px}
+.steps li::before{content:"0" counter(s);font-family:var(--display);font-weight:700;font-size:40px;display:block;line-height:1;margin-bottom:10px}
+.steps h3{font-size:24px;margin-bottom:8px}
+.steps p{margin:0;color:var(--ink)}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:48px}
+.cert{border:5px solid var(--navy);padding:28px;display:flex;flex-direction:column;gap:6px}
+.cert .issuer{font-family:var(--display);font-weight:600;letter-spacing:.08em;font-size:14px;color:var(--muted);text-transform:uppercase}
+.cert h3{font-size:30px}
+.cert p{margin:0;color:var(--muted);font-size:17px}
+.cert a{margin-top:auto;padding-top:12px;font-weight:600;font-size:16px}
+.cert.slot{border-style:dashed;border-color:var(--line);color:var(--muted)}
+.cert.slot h3{color:var(--navy);font-size:24px}
+.edu{margin-top:28px;font-size:18px;color:var(--ink)}
+
+/* future */
+.future{background:var(--navy);color:#fff}
+.future .lede{color:var(--on-navy)}
+.future .eyebrow{color:var(--on-navy)}
+.future-box{margin-top:40px;border:5px dashed #5C7A99;padding:36px;max-width:820px}
+.future-box p{margin:0;color:var(--on-navy)}
+.future-box p + p{margin-top:14px}
+
+/* about */
+.about .wrap{display:flex;flex-wrap:wrap;gap:56px}
+.about .left{flex:1 1 320px}
+.about .right{flex:2 1 520px;min-width:0;color:var(--ink)}
+.about .right p{margin:0 0 18px}
+
+/* contact */
+.contact{background:var(--pale)}
+.contact .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;justify-content:space-between}
+.contact-copy{flex:1 1 440px}
+.contact-box{flex:1 1 380px;min-width:0;border:6px solid var(--navy);background:#fff;padding:32px}
+.contact-box a.email{font-family:var(--display);font-weight:700;font-size:28px;text-decoration:none;overflow-wrap:anywhere}
+.contact-box a.email:hover{text-decoration:underline}
+.contact-box dl{margin:20px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:17px}
+.contact-box dt{font-weight:600}
+.contact-box dd{margin:0;color:var(--muted)}
+
+footer{background:var(--navy-deep);color:#B9C8D8;font-size:15px;padding:28px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+@media (max-width:640px){
+  section{padding:72px 0}
+  .hero{padding:64px 0 80px}
+  .hero-mark{flex-basis:200px}
+  .brand span{font-size:18px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Beach Networking home">
+      <img src="logos/bn-icon-white.svg" alt="">
+      <span>BEACH NETWORKING</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">IT &amp; Network Consulting · Virginia Beach, VA</span>
+      <h1>Networks built right, the first time.</h1>
+      <p>Beach Networking helps homes and small businesses plan, rebuild and secure their networks. From a full overhaul to a second opinion, you get straight answers from a certified network engineer.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#contact">Request a consultation</a>
+        <a class="btn btn-line" href="#services">See services</a>
+      </div>
+    </div>
+    <img class="hero-mark" src="logos/bn-icon-white.svg" alt="Beach Networking BN logo">
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2>What we do</h2>
+    <p class="lede">Consulting first. Every job starts with understanding what you have and what you need, then a plan you can actually follow.</p>
+
+    <div class="grid">
+      <article class="card featured">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="15" y="3" width="10" height="8"/><rect x="3" y="29" width="10" height="8"/><rect x="15" y="29" width="10" height="8"/><rect x="27" y="29" width="10" height="8"/><path d="M20 11v18M8 29v-8h24v8"/></svg>
+        <h3>Network overhauls</h3>
+        <p>Replacing a network that grew without a plan. A clean redesign and rebuild, start to finish:</p>
+        <ul>
+          <li>Topology and IP addressing redesign</li>
+          <li>VLANs and segmentation</li>
+          <li>Switching, routing and firewall setup</li>
+          <li>Cabling and rack cleanup</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="17" cy="17" r="11"/><path d="M25 25l11 11"/><path d="M12 17h10M17 12v10"/></svg>
+        <h3>Network assessments</h3>
+        <p>A walkthrough of your current setup with a written report: what's working, what's at risk, and what to fix first.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3l14 5v10c0 9-6 15-14 19C12 33 6 27 6 18V8z"/><path d="M14 20l4 4 8-9"/></svg>
+        <h3>Security hardening</h3>
+        <p>Firewall rules, secure remote access, guest and IoT isolation, and closing the gaps that default settings leave open.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 15a23 23 0 0 1 32 0M9 21a15 15 0 0 1 22 0M14 27a8 8 0 0 1 12 0"/><circle cx="20" cy="33" r="2"/></svg>
+        <h3>Wi-Fi design</h3>
+        <p>Access point placement and configuration for full coverage, with no dead zones and no slowdowns when everyone is online.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="6" width="28" height="9"/><rect x="6" y="25" width="28" height="9"/><path d="M11 10.5h4M11 29.5h4"/><path d="M20 15v10"/></svg>
+        <h3>Small business IT setup</h3>
+        <p>New office or new location? Internet, network gear, Wi-Fi, printers and the basics, set up properly from day one.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M9 4h16l7 7v25H9z"/><path d="M25 4v7h7"/><path d="M14 19h13M14 25h13M14 31h8"/></svg>
+        <h3>Documentation</h3>
+        <p>Network diagrams, device inventories and configuration records, so the next person who touches your network knows what's there.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="eyebrow">Process</span>
+    <h2>How a project works</h2>
+    <ol class="steps">
+      <li><h3>Consult</h3><p>A conversation about your goals, your budget and the problems you're running into.</p></li>
+      <li><h3>Assess</h3><p>A look at your current equipment, layout and configuration.</p></li>
+      <li><h3>Plan</h3><p>A written proposal with recommendations, equipment and cost before any work begins.</p></li>
+      <li><h3>Build &amp; hand off</h3><p>The work gets done, tested and documented, and you get the documentation.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <span class="eyebrow">Credentials</span>
+    <h2>Industry certifications</h2>
+    <p class="lede">Work is done by an engineer holding current industry certifications from Cisco and CompTIA.</p>
+
+    <div class="certs">
+      <article class="cert">
+        <span class="issuer">Cisco</span>
+        <h3>CCNA</h3>
+        <p>Cisco Certified Network Associate</p>
+        <a href="https://www.credly.com/badges/980f2469-9ba5-4c63-bb8b-7d56fa93cc92/public_url" target="_blank" rel="noopener noreferrer">Verify credential</a>
+      </article>
+      <article class="cert">
+        <span class="issuer">CompTIA</span>
+        <h3>Security+</h3>
+        <p>CompTIA Security+</p>
+        <a href="https://www.credly.com/badges/01f17f0f-2d6e-4774-a31f-77583e5f25d4/public_url" target="_blank" rel="noopener noreferrer">Verify credential</a>
+      </article>
+      <article class="cert">
+        <span class="issuer">CompTIA</span>
+        <h3>Network+</h3>
+        <p>CompTIA Network+</p>
+        <a href="https://www.credly.com/badges/f4705fa5-d40d-45c1-904c-fca1695d4101/public_url" target="_blank" rel="noopener noreferrer">Verify credential</a>
+      </article>
+
+    </div>
+    <p class="edu"><strong>Education:</strong> B.S. in Cybersecurity, Old Dominion University</p>
+  </div>
+</section>
+
+<section class="future" id="future">
+  <div class="wrap">
+    <span class="eyebrow">Future projects</span>
+    <h2>What's next</h2>
+    <p class="lede">Beach Networking LLC is set up to grow beyond consulting. New projects and ventures will be listed here as they take shape.</p>
+    <div class="future-box">
+      <p>Nothing here is set in stone yet. Check back later, or get in touch if you'd like to work together on something.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="left">
+      <span class="eyebrow">About</span>
+      <h2>About Beach Networking</h2>
+    </div>
+    <div class="right">
+      <p>Beach Networking LLC is an IT and network consulting company based in Virginia Beach, Virginia, serving Hampton Roads.</p>
+      <p>It's run by a professional network engineer who works on enterprise infrastructure day to day and brings that same standard to homes and small businesses.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-copy">
+      <span class="eyebrow">Contact</span>
+      <h2>Start with a conversation</h2>
+      <p class="lede">Tell us a little about your network and what you'd like to fix or build. Send an email and you'll get a reply within 48 hours.</p>
+    </div>
+    <div class="contact-box">
+      <a class="email" href="mailto:Info@Beachnetworking.com">Info@BeachNetworking.com</a>
+      <dl>
+        
+        <dt>Area</dt><dd>Virginia Beach &amp; Hampton Roads</dd>
+        <dt>Replies</dt><dd>Within 48 hours</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Beach Networking LLC. All rights reserved.</span>
+    <span>Virginia Beach, Virginia</span>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
